@@ -15,7 +15,7 @@ const createUser = async (req, res) => {
       const datacreate = await userModel.create(data);
       res.status(201).send({ status: true, data: datacreate });
     } catch(err) {
-      return errorHandler(err, res);
+      return res.status(500).send({status: false, message: err.message});
     }
   };
 
@@ -54,10 +54,10 @@ const logInUserData = async (req, res) => {
       return res.status(200).send({
         status: true,
         message: "User login successfull",
-        userId: { userId: user._id, token: token },
+        userId: { userId: user._id},
       });
     } catch (err) {
-      return errorHandler(err, res);
+      return res.status(500).send({status: false, message: err.message});
     }
   };
   
@@ -80,7 +80,7 @@ const getUserData = async (req, res) => {
         userdata,
       });
     } catch (err) {
-      return errorHandler(err, res);
+      return res.status(500).send({status: false, message: err.message});
     }
   };
 
