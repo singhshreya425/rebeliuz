@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.formsub-btn{
+  background-color: green;
+  color: aliceblue;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.home-btn{
+  background-color: green;
+  color: aliceblue;
+  border: none;
+  text-decoration-line: none; 
+  list-style-type: none;
+}
